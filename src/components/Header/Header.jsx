@@ -1,15 +1,12 @@
 import React from 'react';
+import carImage from '../../images/car.png';
 import {
   CarIcon,
   HeaderContainer,
   HeaderWrapper,
-  IconWrapper,
   LogoLink,
-  LogoTitle,
-  NavMenu,
-  NavMenuItem,
-  NavMenuItemBox,
-  NavMenuItemLink,
+  NavList,
+  ItemLink,
 } from './Header.styled';
 
 const Header = () => {
@@ -18,31 +15,14 @@ const Header = () => {
       <HeaderContainer>
         <HeaderWrapper>
           <LogoLink to="/">
-            <IconWrapper>
-              <CarIcon />
-            </IconWrapper>
-
-            <LogoTitle>
-              Best Car <br /> Renting
-            </LogoTitle>
+            <CarIcon src={carImage} alt="Car Icon" />{' '}
           </LogoLink>
-
-          <NavMenu>
-            <NavMenuItemBox>
-              <NavMenuItem>
-                <NavMenuItemLink to="/">Home</NavMenuItemLink>
-              </NavMenuItem>
-
-              <NavMenuItem>
-                <NavMenuItemLink to="/catalog">Cars catalog</NavMenuItemLink>
-              </NavMenuItem>
-
-              <NavMenuItem>
-                <NavMenuItemLink to="/favourites">Favourites</NavMenuItemLink>
-              </NavMenuItem>
-            </NavMenuItemBox>
-          </NavMenu>
         </HeaderWrapper>
+        <NavList>
+          <ItemLink to="/">Home</ItemLink>
+          <ItemLink to="/catalog">Cars catalog</ItemLink>
+          <ItemLink to="/favourites">Favourites</ItemLink>
+        </NavList>
       </HeaderContainer>
     </header>
   );
