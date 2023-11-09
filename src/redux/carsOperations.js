@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-axios.defaults.baseURL = 'https://650740703a38daf4803f502c.mockapi.io/api';
+axios.defaults.baseURL = 'https://654bf75e5b38a59f28eff89c.mockapi.io/api';
 
 export const fetchCars = createAsyncThunk(
   'cars/fetchAll',
@@ -16,9 +16,3 @@ export const fetchCars = createAsyncThunk(
     }
   }
 );
-
-
-
-
-
-

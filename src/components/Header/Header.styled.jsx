@@ -24,7 +24,7 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const LogoLink = styled(Link)`
-display: flex;
+  display: flex;
   align-items: center;
   margin-right: 170px;
   text-decoration: none;
@@ -32,20 +32,11 @@ display: flex;
   background-color: #ffffff8a;
   border-radius: 60px;
 
-
   &:hover,
   :focus {
     color: ${theme.colors.blue};
-    text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #0fa,
-    0 0 82px #0fa,
-    0 0 92px #0fa,
-    0 0 102px #0fa,
-    0 0 151px #0fa;
-}
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+      0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
   }
 `;
 export const IconWrapper = styled.div`
@@ -93,20 +84,11 @@ export const NavMenuItemLink = styled(Link)`
   text-decoration: none;
   margin-right: 40px;
   transition: all ${theme.transition.main};
-  
 
   &:hover,
   :focus {
-    color: ${theme.colors.light};    
-    text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #0fa,
-    0 0 82px #0fa,
-    0 0 92px #0fa,
-    0 0 102px #0fa,
-    0 0 151px #0fa;
-}
+    color: ${theme.colors.light};
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+      0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
   }
 `;
