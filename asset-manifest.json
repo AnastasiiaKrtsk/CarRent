@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/CarRent/static/css/main.72fbaef5.css",
+    "main.js": "/CarRent/static/js/main.9337a64d.js",
+    "static/media/highlanderw.png": "/CarRent/static/media/highlanderw.74797318a97032e7ad7e.png",
+    "static/media/car.png": "/CarRent/static/media/car.1397b0417f62f2fe1e0f.png",
+    "static/media/volk.png": "/CarRent/static/media/volk.c134e9b0e1769f8223d3.png",
+    "static/media/fav.png": "/CarRent/static/media/fav.16069579e64ea9d2a09d.png",
+    "static/media/slick.svg": "/CarRent/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/CarRent/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/CarRent/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/CarRent/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/pattern.svg": "/CarRent/static/media/pattern.45cc72b6b5c1de5afbb325febd0eab6b.svg",
+    "static/media/normal.svg": "/CarRent/static/media/normal.42b1619ff67389e17a5ab9e344f723d5.svg",
+    "static/media/active.svg": "/CarRent/static/media/active.ca328ba8fd1a33232c33b80a393a7bca.svg",
+    "index.html": "/CarRent/index.html",
+    "main.72fbaef5.css.map": "/CarRent/static/css/main.72fbaef5.css.map",
+    "main.9337a64d.js.map": "/CarRent/static/js/main.9337a64d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.72fbaef5.css",
+    "static/js/main.9337a64d.js"
+  ]
+}
