@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 import { Link } from 'react-router-dom';
-import { IoCarSport } from 'react-icons/io5'
+import { IoCarSport } from 'react-icons/io5';
 
 export const HeaderContainer = styled.div`
-width: 100%;
+  width: 100%;
   height: 78px;
   margin-top: 0;
   position: sticky;
@@ -12,17 +12,15 @@ width: 100%;
   z-index: 50;
   padding: 2px 0;
   background-color: ${theme.colors.blue};
-
-`
+`;
 
 export const HeaderWrapper = styled.div`
   margin: auto;
   max-width: 1200px;
   height: 100%;
   align-items: center;
-  display: flex;  
+  display: flex;
   justify-content: start;
-
 `;
 
 export const LogoLink = styled(Link)`
@@ -49,23 +47,23 @@ display: flex;
     0 0 151px #0fa;
 }
   }
-`
+`;
 export const IconWrapper = styled.div`
-background-color: #fff;
-padding: 12px;
-border-radius: 60px;
-margin-right: 5px;
-`
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 60px;
+  margin-right: 5px;
+`;
 
 export const CarIcon = styled(IoCarSport)`
-width: 30px;
-height: 30px;
-color:#3470FF;
-`
+  width: 30px;
+  height: 30px;
+  color: #3470ff;
+`;
 
 export const LogoTitle = styled.h4`
-margin-right: 15px;
-`
+  margin-right: 15px;
+`;
 
 export const NavMenu = styled.ul`
   position: relative;
@@ -87,15 +85,6 @@ export const NavMenuItem = styled.div`
   justify-content: center;
   align-items: center;
   border-shadow: 0 0 120px #fff;
-`;
-
-export const NavMenuItemContact = styled.li`
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-shadow: 0 0 120px #fff;
-  margin-left: 350px;
 `;
 
 export const NavMenuItemLink = styled(Link)`
@@ -121,7 +110,3 @@ export const NavMenuItemLink = styled(Link)`
 }
   }
 `;
-
-
-
-

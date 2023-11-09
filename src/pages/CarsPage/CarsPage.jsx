@@ -29,7 +29,6 @@ const CarsPage = () => {
   return (
     <CarsContainer>
       <CarsFilter onSubmitCarsForm={setSearch} />
-      {/* <CarsList cars={getAllCars} /> */}
       <CarsList cars={paginatedCars} search={search} />
       {getAllCars.length > 0
         ? totalPages !== page && <LoadmoreBtn onClick={getPage} />
