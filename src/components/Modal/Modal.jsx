@@ -97,7 +97,7 @@ const Modal = ({
                 {rentalConditionsSplitted[2]}
               </ModalConditionText>
               <ModalConditionText>
-                Mileage:{' '}
+                Mileage:
                 <BlueNumber>{mileage.toLocaleString('en-EN')}</BlueNumber>
               </ModalConditionText>
               <ModalConditionText>

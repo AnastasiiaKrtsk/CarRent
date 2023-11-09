@@ -1,21 +1,20 @@
-import { StyledOverlay } from './Loader.styled';
+import { ProgressBar } from 'react-loader-spinner';
 
-const { ColorRing } = require('react-loader-spinner');
-
-const Loader = () => {
-  return (
-    <StyledOverlay>
-      <ColorRing
-        visible={true}
-        height="120"
-        width="120"
-        ariaLabel="blocks-loading"
-        wrapperStyle={{}}
-        wrapperClass="blocks-wrapper"
-        colors={['#54ADFF', '#FFF', '#54ADFF', '#FFF', '#54ADFF']}
-      />
-    </StyledOverlay>
-  );
-};
-
-export default Loader;
+export const Loader = () => (
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh',
+    }}
+  >
+    <ProgressBar
+      height={200}
+      width={200}
+      ariaLabel="progress-bar-loading"
+      borderColor="#100c08"
+      barColor="var(--button)"
+    />
+  </div>
+);
