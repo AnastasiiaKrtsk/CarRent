@@ -69,7 +69,6 @@ export const ClearBtn = styled.button`
   cursor: pointer;
 `;
 
-export const Cross = styled.img`
-  width: 20px;
-  height: 20px;
+export const Cross = styled.svg`
+  stroke: #000;
 `;

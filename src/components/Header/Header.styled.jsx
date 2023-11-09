@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
-  background-color: blue;
+  background-color: #c0a975;
   display: flex;
   gap: 40px;
   align-items: center;
@@ -19,8 +19,8 @@ export const LogoLink = styled(Link)`
   padding: 10px;
   align-items: center;
   text-decoration: none;
-  color: #fff;
-  background-color: #fff;
+  color: #e6f4f1;
+  background-color: #e6f4f1;
   border-radius: 60px;
 `;
 
@@ -36,12 +36,12 @@ export const NavList = styled.ul`
 `;
 
 export const ItemLink = styled(Link)`
-  color: white;
+  color: #e6f4f1;
   font-size: 20px;
   text-decoration: none;
 
   &:hover,
   :focus {
-    color: lightblue;
+    color: #6e5c2c;
   }
 `;

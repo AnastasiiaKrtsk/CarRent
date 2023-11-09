@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ClearBtn, Cross, Form, Input, SearchBtn } from './Filter.styled';
-import cross from '../../images/icons8-cross-48.png';
+import sprite from '../../images/sprite.svg';
 import { toast } from 'react-toastify';
 
 const Filter = ({ onSubmitCarsForm }) => {
@@ -49,7 +49,9 @@ const Filter = ({ onSubmitCarsForm }) => {
       </SearchBtn>
       {search && (
         <ClearBtn type="button" onClick={onClickClear}>
-          <Cross src={cross} alt="cross" />
+          <Cross width="20" height="20">
+            <use href={`${sprite}#cross`} />
+          </Cross>
         </ClearBtn>
       )}
     </Form>
