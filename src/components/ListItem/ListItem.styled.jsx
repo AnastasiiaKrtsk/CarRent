@@ -35,6 +35,7 @@ export const SvgWrapper = styled.div`
 `;
 
 export const Heart = styled.svg`
+  z-index: 9999999999;
   position: absolute;
   width: 24px;
   height: 24px;
