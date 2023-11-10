@@ -1,16 +1,15 @@
 import React from 'react';
-import { Btn, Container, LinkBtn, Title } from './Hero.styled';
-
+import sprite from '../../images/sprite.svg';
+import { Container, LinkBtn, Title, TittleSpan } from './Hero.styled';
 const Hero = () => {
   return (
-    <>
-      <Container>
-        <Title>TIttle</Title>
-        <Btn>
-          <LinkBtn to="/catalog">Reserve Now</LinkBtn>
-        </Btn>
-      </Container>
-    </>
+    <Container>
+      <Title>
+        Explore the world on your own terms with our{' '}
+        <TittleSpan>car rental</TittleSpan> services.
+      </Title>
+      <LinkBtn to="/catalog">Reserve Now</LinkBtn>
+    </Container>
   );
 };
 

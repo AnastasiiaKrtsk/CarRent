@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  ImageWrapper,
   Img,
   CarItemContainer,
   CarTitle,
@@ -11,16 +10,20 @@ import {
   CarText,
   CarButton,
   Heart,
+  SvgWrapper,
+  ImgWrapper,
+  AltText,
+  GlobalStyleOverride,
 } from './ListItem.styled';
 import Modal from '../Modal/Modal';
 // import {IoIosHeartEmpty} from 'react-icons/io'
-import heart from '../../images/normal.svg';
-import heartBlue from '../../images/active.svg';
+// import heart from '../../images/normal.svg';
+// import heartBlue from '../../images/active.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectedFavorite } from '../../redux/selectors';
 import { deleteFromFavorites, addToFavorites } from '../../redux/carsSlice';
-import fav from '../../images/fav.png';
-
+import fav from '../../images/no-img.jpg';
+import sprite from '../../images/sprite.svg';
 const CarsItem = ({ car }) => {
   const [openModal, setOpenModal] = useState(false);
   const favorites = useSelector(selectedFavorite);
@@ -43,16 +46,23 @@ const CarsItem = ({ car }) => {
   };
   return (
     <>
+      <GlobalStyleOverride />
       <CarItemContainer>
-        <ImageWrapper>
-          <Heart
-            src={choseFavorite ? heartBlue : heart}
-            alt="add to favorite"
-            onClick={toggleFavorite}
-          />
-
-          <Img src={car.img ? car.img : fav} alt={car.make} />
-        </ImageWrapper>
+        <SvgWrapper>
+          <Heart onClick={toggleFavorite} width="16" height="16">
+            <use
+              href={
+                choseFavorite
+                  ? `${sprite}#heart-active`
+                  : `${sprite}#heart-normal`
+              }
+            />
+          </Heart>
+          <ImgWrapper>
+            <Img src={car.img ? car.img : fav} alt={car.make} />
+            <AltText>{car.make}</AltText>
+          </ImgWrapper>{' '}
+        </SvgWrapper>
 
         <TextContent>
           <CarTitleWrapper>

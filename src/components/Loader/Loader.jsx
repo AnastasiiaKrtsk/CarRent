@@ -13,8 +13,8 @@ export const Loader = () => (
       height={200}
       width={200}
       ariaLabel="progress-bar-loading"
-      borderColor="#100c08"
-      barColor="var(--button)"
+      borderColor="#fff"
+      barColor="#fff"
     />
   </div>
 );

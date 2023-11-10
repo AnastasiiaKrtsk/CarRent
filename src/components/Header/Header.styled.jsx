@@ -2,11 +2,12 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
-  background-color: #c0a975;
+  background-color: #000000;
   display: flex;
   gap: 40px;
   align-items: center;
   padding: 5px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
 `;
 
 export const HeaderWrapper = styled.div`
@@ -19,8 +20,8 @@ export const LogoLink = styled(Link)`
   padding: 10px;
   align-items: center;
   text-decoration: none;
-  color: #e6f4f1;
-  background-color: #e6f4f1;
+  color: #d9d9d9;
+  background-color: #d9d9d9;
   border-radius: 60px;
 `;
 
@@ -42,6 +43,6 @@ export const ItemLink = styled(Link)`
 
   &:hover,
   :focus {
-    color: #6e5c2c;
+    color: #bf8f00;
   }
 `;
