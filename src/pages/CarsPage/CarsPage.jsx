@@ -22,7 +22,7 @@ const CarsPage = () => {
     dispatch(fetchCars())
       .then(() => setLoading(false)) // Set loading to false when data is fetched
       .catch(error => {
-        // Handle the error, e.g., show an error message.
+        console.log(error);
         setLoading(false);
       });
   }, [dispatch]);

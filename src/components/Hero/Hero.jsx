@@ -1,5 +1,4 @@
 import React from 'react';
-import sprite from '../../images/sprite.svg';
 import { Container, LinkBtn, Title, TittleSpan } from './Hero.styled';
 const Hero = () => {
   return (
