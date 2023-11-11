@@ -12,7 +12,6 @@ import {
   Heart,
   SvgWrapper,
   ImgWrapper,
-  AltText,
   GlobalStyleOverride,
 } from './ListItem.styled';
 import Modal from '../Modal/Modal';
@@ -59,8 +58,7 @@ const CarsItem = ({ car }) => {
             />
           </Heart>
           <ImgWrapper>
-            <Img src={car.img ? car.img : fav} alt={car.make} />
-            <AltText>{car.make}</AltText>
+            <Img src={car.img ?? fav} alt={car.make} />
           </ImgWrapper>{' '}
         </SvgWrapper>
 

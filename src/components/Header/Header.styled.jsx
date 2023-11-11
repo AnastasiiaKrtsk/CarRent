@@ -21,14 +21,11 @@ export const LogoLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   color: #d9d9d9;
-  background-color: #d9d9d9;
-  border-radius: 60px;
 `;
 
 export const CarIcon = styled.img`
   width: 30px;
   height: 30px;
-  color: #3470ff;
 `;
 
 export const NavList = styled.ul`

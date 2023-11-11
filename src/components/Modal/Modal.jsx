@@ -1,40 +1,42 @@
 import React from 'react';
 import {
-  BlueNumber,
+  Backdrop,
+  SvgModal,
+  Text,
+  CloseBtnModal,
   ConditionTextWrapper,
-  LinkBtn,
-  ModalBackground,
-  ModalButtn,
-  ModalCloseBtn,
-  ModalConditionText,
-  ModalContainer,
-  ModalContentContainer,
-  ModalFlexWrapper,
-  ModalImg,
+  ContainerModal,
   ModalMainText,
   ModalText,
-  ModalTitle,
-  ModalTitleBlue,
-  Text,
+  ModalTitleGold,
+  Number,
+  ImgModal,
+  ImgWrapperModal,
+  LinkBtn,
+  ModalFlexWrapper,
+  ModalConditionWrapper,
+  ModalContentDiv,
+  TitleModal,
 } from './Modal.styled';
-import { IoMdClose } from 'react-icons/io';
+import sprite from '../../images/sprite.svg';
 
 const Modal = ({
   closeModal,
   model,
   make,
-  year,
+  rentalConditions,
   rentalPrice,
   address,
-  rentalCompany,
   functionalities,
+  year,
+  description,
+  accessories,
   id,
   type,
   img,
-  description,
-  accessories,
-  rentalConditions,
   mileage,
+  fuelConsumption,
+  engineSize,
 }) => {
   const addressParts = address.split(', ');
   const city = addressParts[1];
@@ -45,73 +47,74 @@ const Modal = ({
   const number = parseInt(match[0], 10);
 
   return (
-    <ModalBackground>
-      <ModalContainer>
-        <ModalImg src={img} alt={make} />
-        <ModalCloseBtn onClick={() => closeModal(false)}>
-          <IoMdClose />
-        </ModalCloseBtn>
-        <ModalTitle>
-          {make} <ModalTitleBlue>{model}</ModalTitleBlue>, {year}
-        </ModalTitle>
+    <Backdrop>
+      <ContainerModal>
+        <ImgWrapperModal>
+          <ImgModal src={img} alt={make + ' photo'} />
+        </ImgWrapperModal>
+        <CloseBtnModal onClick={() => closeModal(false)}>
+          <SvgModal width="20" height="20">
+            <use href={`${sprite}#cross-black`} />
+          </SvgModal>
+        </CloseBtnModal>
+        <TitleModal>
+          {make} <ModalTitleGold>{model}</ModalTitleGold>, {year}
+        </TitleModal>
 
         <ModalFlexWrapper>
-          <ModalContentContainer>
+          <ModalContentDiv>
             <ModalText>
               <Text>
-                {city} | {country} | {rentalCompany}
+                city: {city} | country: {country} | id: {id}
               </Text>
               <Text>
-                {type} | {model} | {id} | {accessories[2]}
+                type: {type} | fuel consumption: {fuelConsumption} | engine
+                size: {engineSize}
               </Text>
             </ModalText>
             <ModalMainText>{description}</ModalMainText>
-          </ModalContentContainer>
+          </ModalContentDiv>
 
-          <ModalContentContainer>
+          <ModalContentDiv>
             <ModalMainText>Accessories and functionalities:</ModalMainText>
             <ModalText>
               <Text>
                 {accessories[0]} | {accessories[1]} | {accessories[2]}
               </Text>
               <Text>
-                {functionalities[0]} | {functionalities[1]} |{' '}
-                {functionalities[2]}
+                {functionalities[0]} | {functionalities[1]}
               </Text>
             </ModalText>
-          </ModalContentContainer>
+          </ModalContentDiv>
 
-          <ModalContentContainer>
+          <ModalContentDiv>
             <ModalMainText>Rental Condition</ModalMainText>
             <ConditionTextWrapper>
-              <ModalConditionText>
-                Minimum age : <BlueNumber>{number}</BlueNumber>
-              </ModalConditionText>
-              <ModalConditionText>
+              <ModalConditionWrapper>
+                Minimum age: <Number>{number}</Number>
+              </ModalConditionWrapper>
+              <ModalConditionWrapper>
                 {rentalConditionsSplitted[1]}
-              </ModalConditionText>
+              </ModalConditionWrapper>
             </ConditionTextWrapper>
 
             <ConditionTextWrapper>
-              <ModalConditionText>
+              <ModalConditionWrapper>
                 {rentalConditionsSplitted[2]}
-              </ModalConditionText>
-              <ModalConditionText>
-                Mileage:
-                <BlueNumber>{mileage.toLocaleString('en-EN')}</BlueNumber>
-              </ModalConditionText>
-              <ModalConditionText>
-                Price: <BlueNumber>{rentalPrice}</BlueNumber>
-              </ModalConditionText>
+              </ModalConditionWrapper>
+              <ModalConditionWrapper>
+                Mileage: <Number>{mileage.toLocaleString('en-EN')}</Number>
+              </ModalConditionWrapper>
+              <ModalConditionWrapper>
+                Price: <Number>{rentalPrice}</Number>
+              </ModalConditionWrapper>
             </ConditionTextWrapper>
-          </ModalContentContainer>
+          </ModalContentDiv>
         </ModalFlexWrapper>
 
-        <ModalButtn>
-          <LinkBtn to="/">Rental car</LinkBtn>
-        </ModalButtn>
-      </ModalContainer>
-    </ModalBackground>
+        <LinkBtn to="/">Rental car</LinkBtn>
+      </ContainerModal>
+    </Backdrop>
   );
 };
 

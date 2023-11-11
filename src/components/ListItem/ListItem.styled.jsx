@@ -35,7 +35,7 @@ export const SvgWrapper = styled.div`
 `;
 
 export const Heart = styled.svg`
-  z-index: 9999999999;
+  z-index: 2;
   position: absolute;
   width: 24px;
   height: 24px;
@@ -48,6 +48,7 @@ export const Heart = styled.svg`
   }
 `;
 export const Img = styled.img`
+  z-index: 1;
   position: relative;
   width: 274px;
   height: 268px;
@@ -129,10 +130,8 @@ export const CarButton = styled.button`
   width: 274px;
   height: 44px;
   padding: 12px 99px;
-  background: blue;
   border: none;
   border-radius: 0 0 14px 14px;
-  color: #d9d9d9;
   cursor: pointer;
   transition: all 0.3s ease;
 
