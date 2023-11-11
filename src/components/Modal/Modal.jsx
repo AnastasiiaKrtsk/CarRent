@@ -38,13 +38,11 @@ const Modal = ({
   fuelConsumption,
   engineSize,
 }) => {
-  const addressParts = address.split(', ');
-  const city = addressParts[1];
-  const country = addressParts[2];
-  const rentalConditionsSplitted = rentalConditions.split('\n', 3);
-  const firstElement = rentalConditionsSplitted[0];
-  const match = firstElement.match(/\d+/);
-  const number = parseInt(match[0], 10);
+  const [city, country] = address.split(', ');
+  const rentalConditionsLines = rentalConditions.split('\n', 3);
+  const minimumAgeLine = rentalConditionsLines[0];
+  const match = minimumAgeLine.match(/\d+/);
+  const minimumAge = parseInt(match[0], 10);
 
   return (
     <Backdrop>
@@ -91,16 +89,16 @@ const Modal = ({
             <ModalMainText>Rental Condition</ModalMainText>
             <ConditionTextWrapper>
               <ModalConditionWrapper>
-                Minimum age: <Number>{number}</Number>
+                Minimum age: <Number>{minimumAge}</Number>
               </ModalConditionWrapper>
               <ModalConditionWrapper>
-                {rentalConditionsSplitted[1]}
+                {rentalConditionsLines[1]}
               </ModalConditionWrapper>
             </ConditionTextWrapper>
 
             <ConditionTextWrapper>
               <ModalConditionWrapper>
-                {rentalConditionsSplitted[2]}
+                {rentalConditionsLines[2]}
               </ModalConditionWrapper>
               <ModalConditionWrapper>
                 Mileage: <Number>{mileage.toLocaleString('en-EN')}</Number>

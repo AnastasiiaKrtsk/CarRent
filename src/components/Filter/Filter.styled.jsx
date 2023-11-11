@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { theme } from '../../styles/theme';
 
 export const Form = styled.form`
   position: relative;
@@ -12,11 +11,9 @@ export const Form = styled.form`
   overflow: hidden;
   margin-bottom: 60px;
   border-radius: 24px;
-  box-shadow: ${theme.boxShadows.main};
 
   &:focus,
   &:hover {
-    box-shadow: ${theme.boxShadows.secondary};
   }
 `;
 
@@ -25,15 +22,15 @@ export const Input = styled.input`
   padding-left: 20px;
   border: none;
   outline: none;
-  border: 1px solid ${theme.colors.blue};
+  border: 1px solid #fff;
   border-radius: 24px;
   height: 100%;
 
-  font-size: ${theme.fontSizes[16]};
+  font-size: 16px;
   line-height: 1.2;
 
-  color: ${theme.colors.grey};
-  background: ${theme.colors.white};
+  color: #000;
+  background: #fff;
 `;
 
 export const SearchBtn = styled.button.withConfig({
@@ -42,19 +39,19 @@ export const SearchBtn = styled.button.withConfig({
   position: absolute;
   top: 10px;
   right: 70px;
-  color: ${theme.colors.blue};
-  font-size: ${theme.fontSizes[20]};
-  font-weight: ${theme.fontWeight.medium};
+  color: #fff;
+  font-size: 20px;
+  font-weight: medium;
   line-height: 24px;
   border: none;
   background-color: transparent;
   cursor: pointer;
 
-  transition: all ${theme.transition.main};
+  transition: all 0.3s ease;
 
   svg:hover,
   svg:focus {
-    fill: ${theme.colors.blue};
+    fill: #fff;
   }
 `;
 

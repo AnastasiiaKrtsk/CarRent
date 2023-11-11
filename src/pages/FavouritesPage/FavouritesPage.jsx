@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FavContainer } from './FavouritesPage.styled';
+import { FavContainer, GlobalStyleOverride } from './FavouritesPage.styled';
 import { useSelector } from 'react-redux';
 import { selectedFavorite } from '../../redux/selectors';
 import CarsList from '../../components/List/List';
@@ -33,6 +33,7 @@ const FavouritesPage = () => {
   return (
     <>
       <FavContainer>
+        <GlobalStyleOverride />
         <CarsFilter onSubmitCarsForm={setSearch} />
         <CarsList cars={paginatedCars} search={search} />
         {/* {favorites.length > 0
