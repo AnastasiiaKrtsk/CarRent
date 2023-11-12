@@ -1,44 +1,89 @@
+// CatalogPage.js
 import React, { useEffect, useState } from 'react';
 import CarsList from '../../components/List/List';
-import CarsFilter from '../../components/Filter/Filter';
 import LoadmoreBtn from '../../components/LoadmoreBtn/LoadmoreBtn';
 import { Loader } from '../../components/Loader/Loader';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCars } from '../../redux/carsOperations';
-import { selectedCars } from '../../redux/selectors';
+import {
+  selectedCars,
+  selectedMakes,
+  selectedFilteredCars,
+} from '../../redux/selectors';
 import { Container } from './CatalogPage.styled';
+import {
+  selectMake,
+  setFilteredCars,
+  updateFilter,
+} from '../../redux/filterSlice';
 
 const carsOnPage = 8;
-const CarsPage = () => {
+
+const CatalogPage = () => {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
   const getAllCars = useSelector(selectedCars);
+  const makes = useSelector(selectedMakes);
+  const selectedMake = useSelector(state => state.filter.selectedMake);
+  const filteredCars = useSelector(selectedFilteredCars);
 
   useEffect(() => {
     dispatch(fetchCars())
-      .then(() => setLoading(false)) // Set loading to false when data is fetched
+      .then(() => setLoading(false))
       .catch(error => {
         console.log(error);
         setLoading(false);
       });
   }, [dispatch]);
 
+  const handleMakeChange = event => {
+    const selectedMake = event.target.value;
+    dispatch(selectMake(selectedMake));
+  };
+
+  const handleFilterClick = () => {
+    filterCars(selectedMake);
+    setPage(1);
+  };
+
+  const filterCars = make => {
+    if (!make) {
+      dispatch(setFilteredCars([])); // Clear the filteredCars state when no make is selected
+      return;
+    }
+    const filtered = getAllCars.filter(car => car.make === make);
+    dispatch(setFilteredCars(filtered));
+  };
+
   if (loading) {
     return <Loader />;
   }
-  const paginatedCars = getAllCars.slice(0, page * carsOnPage);
+
+  const carsToDisplay = filteredCars.length > 0 ? filteredCars : getAllCars;
+  const paginatedCars = carsToDisplay.slice(0, page * carsOnPage);
   const getPage = () => setPage(page + 1);
-  const totalPages = Math.ceil(getAllCars.length / carsOnPage);
+  const totalPages = Math.ceil(carsToDisplay.length / carsOnPage);
 
   return (
     <Container>
-      <CarsFilter onSubmitCarsForm={setSearch} />
+      <Container>
+        <label htmlFor="makeSelector">Select Make: </label>
+        <select id="makeSelector" onChange={handleMakeChange}>
+          <option value="">All Makes</option>
+          {makes.map(make => (
+            <option key={make} value={make}>
+              {make}
+            </option>
+          ))}
+        </select>
+        <button onClick={handleFilterClick}>Filter</button>
+      </Container>
       <CarsList cars={paginatedCars} search={search} />
-      {getAllCars.length > 0
+      {carsToDisplay.length > 0
         ? totalPages !== page && <LoadmoreBtn onClick={getPage} />
         : toast.info('Oops, no more cars...', {
             position: toast.POSITION.TOP_RIGHT,
@@ -47,4 +92,4 @@ const CarsPage = () => {
   );
 };
 
-export default CarsPage;
+export default CatalogPage;
