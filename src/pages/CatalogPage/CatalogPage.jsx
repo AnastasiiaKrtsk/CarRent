@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCars } from '../../redux/carsOperations';
 import { selectedCars } from '../../redux/selectors';
-import { Container } from './CarsPage.styled';
+import { Container } from './CatalogPage.styled';
 
 const carsOnPage = 8;
 const CarsPage = () => {

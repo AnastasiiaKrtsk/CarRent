@@ -40,7 +40,7 @@ const Filter = ({ onSubmitCarsForm }) => {
         type="text"
         id="searchQuery"
         value={search}
-        placeholder="Find your best car"
+        placeholder="Search"
         onChange={handleChange}
       />
 

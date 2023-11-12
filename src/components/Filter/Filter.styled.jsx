@@ -5,11 +5,12 @@ export const Form = styled.form`
   display: flex;
   justify-content: left;
   align-items: center;
-  width: 800px;
+  width: 500px;
   height: 44px;
-  margin-top: 60px;
+
   overflow: hidden;
   margin-bottom: 60px;
+  margin-top: 60px;
   border-radius: 24px;
 
   &:focus,
@@ -57,10 +58,12 @@ export const SearchBtn = styled.button.withConfig({
 
 export const ClearBtn = styled.button`
   position: absolute;
-  top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   right: 10px;
-  width: 34px;
-  height: 34px;
+  padding: 5px;
   border: none;
   background-color: transparent;
   cursor: pointer;
