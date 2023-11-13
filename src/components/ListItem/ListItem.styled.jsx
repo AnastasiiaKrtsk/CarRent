@@ -13,8 +13,6 @@ export const CarItemContainer = styled.li`
   align-items: flex-start;
   background-color: #616161;
   border-radius: 14px;
-  margin-left: auto;
-  margin-right: auto;
 
   transition: all 0.3s ease;
 
