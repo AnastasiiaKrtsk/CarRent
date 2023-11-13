@@ -23,4 +23,7 @@ export const StylesButton = styled.button`
     background-color: #bf8f00;
     color: #202123;
   }
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
 `;

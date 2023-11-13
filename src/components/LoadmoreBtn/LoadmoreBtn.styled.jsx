@@ -20,3 +20,13 @@ export const Loadmore = styled.button`
     color: #bf8f00;
   }
 `;
+export const LoadWrapper = styled.button`
+  background-color: transparent;
+  border: none;
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: center;
+  @media screen and (min-width: 768px) {
+    margin-top: 40px;
+  }
+`;

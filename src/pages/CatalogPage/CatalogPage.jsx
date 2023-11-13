@@ -12,18 +12,15 @@ import {
   selectedFilteredCars,
 } from '../../redux/selectors';
 import { Container, MakeSelector, SearchContainer } from './CatalogPage.styled';
-import {
-  selectMake,
-  setFilteredCars,
-  updateFilter,
-} from '../../redux/filterSlice';
+import { selectMake, setFilteredCars } from '../../redux/filterSlice';
 import SearchButton from 'components/SearchButton/SearchButton';
+import { ListContainer } from 'components/List/List.styled';
 
 const carsOnPage = 8;
 
 const CatalogPage = () => {
   const [page, setPage] = useState(1);
-  const [search, setSearch] = useState('');
+  const [search] = useState('');
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
@@ -70,9 +67,8 @@ const CatalogPage = () => {
   const totalPages = Math.ceil(carsToDisplay.length / carsOnPage);
 
   return (
-    <Container>
+    <ListContainer>
       <SearchContainer>
-        {/* <label htmlFor="makeSelector">Select Make: </label> */}
         <MakeSelector id="makeSelector" onChange={handleMakeChange}>
           <option value="">All Makes</option>
           {makes.map(make => (
@@ -89,7 +85,7 @@ const CatalogPage = () => {
         : toast.info('Oops, no more cars...', {
             position: toast.POSITION.TOP_RIGHT,
           })}
-    </Container>
+    </ListContainer>
   );
 };
 

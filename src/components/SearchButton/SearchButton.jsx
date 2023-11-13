@@ -1,6 +1,6 @@
-import { StylesButton, Text } from './SearchButton.styled';
+import { StylesButton } from './SearchButton.styled';
 
-export default function SearchButton({ text, onClick, width }) {
+export default function SearchButton({ onClick, width }) {
   return (
     <StylesButton
       variant="contained"

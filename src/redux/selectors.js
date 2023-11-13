@@ -9,6 +9,4 @@ export const selectedMakes = createSelector(
 );
 export const selectedCars = state => state.cars.items;
 export const selectedFavorite = state => state.cars.favorites;
-// selectors.js
-
 export const selectedFilteredCars = state => state.filter.filteredCars;
