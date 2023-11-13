@@ -11,7 +11,7 @@ import {
   selectedMakes,
   selectedFilteredCars,
 } from '../../redux/selectors';
-import { Container, MakeSelector, SearchContainer } from './CatalogPage.styled';
+import { MakeSelector, SearchContainer } from './CatalogPage.styled';
 import { selectMake, setFilteredCars } from '../../redux/filterSlice';
 import SearchButton from 'components/SearchButton/SearchButton';
 import { ListContainer } from 'components/List/List.styled';
