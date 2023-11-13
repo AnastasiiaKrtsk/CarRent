@@ -7,7 +7,7 @@ export default function SearchButton({ text, onClick, width }) {
       onClick={onClick}
       style={{ width: width }}
     >
-      <Text>{text}</Text>
+      Search
     </StylesButton>
   );
 }

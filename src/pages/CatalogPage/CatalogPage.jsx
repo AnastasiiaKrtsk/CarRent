@@ -11,12 +11,13 @@ import {
   selectedMakes,
   selectedFilteredCars,
 } from '../../redux/selectors';
-import { Container } from './CatalogPage.styled';
+import { Container, MakeSelector, SearchContainer } from './CatalogPage.styled';
 import {
   selectMake,
   setFilteredCars,
   updateFilter,
 } from '../../redux/filterSlice';
+import SearchButton from 'components/SearchButton/SearchButton';
 
 const carsOnPage = 8;
 
@@ -70,18 +71,18 @@ const CatalogPage = () => {
 
   return (
     <Container>
-      <Container>
-        <label htmlFor="makeSelector">Select Make: </label>
-        <select id="makeSelector" onChange={handleMakeChange}>
+      <SearchContainer>
+        {/* <label htmlFor="makeSelector">Select Make: </label> */}
+        <MakeSelector id="makeSelector" onChange={handleMakeChange}>
           <option value="">All Makes</option>
           {makes.map(make => (
             <option key={make} value={make}>
               {make}
             </option>
           ))}
-        </select>
-        <button onClick={handleFilterClick}>Filter</button>
-      </Container>
+        </MakeSelector>
+        <SearchButton onClick={handleFilterClick}></SearchButton>
+      </SearchContainer>
       <CarsList cars={paginatedCars} search={search} />
       {carsToDisplay.length > 0
         ? totalPages !== page && <LoadmoreBtn onClick={getPage} />

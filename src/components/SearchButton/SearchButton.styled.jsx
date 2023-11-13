@@ -1,24 +1,26 @@
-import { styled as muiStyled } from '@mui/material/styles';
-import Button from '@mui/material/Button';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
-export const StylesButton = muiStyled(Button)(({ theme, width }) => ({
-  width: width,
-  padding: '12px 0 12px 0',
-  borderRadius: '12px',
-  color: theme.palette.getContrastText('#3470FF'),
-  backgroundColor: '#3470FF',
-  '&:hover': {
-    backgroundColor: '#0B44CD',
-  },
-}));
+export const StylesButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 
-export const Text = styled.span`
-  color: #ffffff;
-  font-family: Manrope;
-  font-size: 14px;
-  font-style: normal;
+  text-decoration: none;
   font-weight: 600;
-  line-height: 1.42;
-  text-transform: none;
+  background-color: #202123;
+  color: #bf8f00;
+  width: 150px;
+  height: 45px;
+
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: #bf8f00;
+    color: #202123;
+  }
 `;
